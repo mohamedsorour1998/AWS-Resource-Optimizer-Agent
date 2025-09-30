@@ -1,0 +1,53 @@
+{
+  "aws": {
+    "account_id": "339712964409",
+    "gateway_role_arn": "arn:aws:iam::339712964409:role/ResourceOptimizerGatewayRole",
+    "region": "us-east-1"
+  },
+  "cognito": {
+    "user_pool_id": "us-east-1_IHpcZnIHw",
+    "client_id": "4hnq0p5efbejh2dv1hidecotbp",
+    "client_secret": "v7gd9vnrh59mujq1hs2cl86ptm432a0jqbvepga97qqcb9urve5",
+    "discovery_url": "https://cognito-idp.us-east-1.amazonaws.com/us-east-1_IHpcZnIHw/.well-known/openid-configuration",
+    "resource_server_id": "cost-optimization-gateway",
+    "domain": "cost-optimization-gateway-pool",
+    "token_url": "https://cost-optimization-gateway-pool.auth.us-east-1.amazoncognito.com/oauth2/token"
+  },
+  "gateway": {
+    "id": "resource-optimizer-gateway-aps0o4u4o5",
+    "url": "https://resource-optimizer-gateway-aps0o4u4o5.gateway.bedrock-agentcore.us-east-1.amazonaws.com/mcp",
+    "name": "resource-optimizer-gateway"
+  },
+  "smithy_target": {
+    "id": "HMVA4EQLHC",
+    "name": "ResourceOptimizerTarget",
+    "smithy_uri": "s3://cost-explorer-smithy-api/cloudwatch-2010-08-01.json",
+    "services": [
+      "CloudWatch"
+    ]
+  },
+  "smithy_targets": [
+    {
+      "id": "CCKHDFCMP0",
+      "name": "CloudWatchTarget",
+      "uri": "s3://cost-explorer-smithy-api/cloudwatch-2010-08-01.json",
+      "description": "CloudWatch Metrics for monitoring all AWS resources"
+    },
+    {
+      "id": "HDVO9PBGYD",
+      "name": "CloudWatchLogsTarget",
+      "uri": "s3://cost-explorer-smithy-api/cloudwatch-logs-2014-03-28.json",
+      "description": "CloudWatch Logs for log analysis and monitoring"
+    },
+    {
+      "id": "VDJDLWZ5B2",
+      "name": "EBSTarget",
+      "uri": "s3://cost-explorer-smithy-api/ebs-2019-11-02.json",
+      "description": "EBS for volume and snapshot management"
+    }
+  ],
+  "memory": {
+    "id": "ResourceOptimizerMemory-WVLkWyE5Hu",
+    "name": "ResourceOptimizerMemory"
+  }
+}
