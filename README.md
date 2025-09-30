@@ -1,8 +1,10 @@
-# AWS Resource Optimizer Agent
+# AWS Resource Optimizer Agent 
+[GitHub] (https://github.com/mohamedsorour1998/AWS-Resource-Optimizer-Agent)
 
-**Production-ready AI agent for AWS resource monitoring and optimization**
+I built a production-ready **AWS Resource Optimizer Agent** with **Amazon Bedrock AgentCore Gateway**, **Claude Sonnet 4.5**, and the **Strands Agents SDK**, and it completely transformed how I manage my cloud environment. Instead of digging through CloudWatch dashboards or juggling CLI commands, I can now just ask questions like *“Which EC2 instances are underutilized?”* or *“Show me Lambda errors from the last 24 hours”*—and the agent instantly pulls the right metrics, logs, or EBS data from over **137 AWS tools**. I can run it locally for testing or deploy it to **AgentCore Runtime** for secure, scalable use, with built-in **OAuth, memory, and semantic search** that make it simple and powerful. Setup took only a few steps—create an IAM role, load the Smithy specs for CloudWatch, Logs, and EBS, and the agent was live. It saves me hours of manual work and gives me confidence my infrastructure is running efficiently—I can’t imagine going back.
 
-Built with Amazon Bedrock AgentCore Gateway, Claude Sonnet 4.5, and Strands Agents SDK.
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/rc880c782kpiwgn6wpdu.png)
 
 ---
 
@@ -33,11 +35,17 @@ AI-powered agent that monitors and optimizes AWS resources through natural langu
 
 ### Key Features
 
-- ✅ **137 AWS Tools**: Access to CloudWatch, Logs, and EBS APIs
+- ✅ **137 AWS Tools Access**:  in AgentCore GatewayCloudWatch, Logs, and EBS APIs via AgentCore Gateway
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6ews3vw0stnzvodpkhlw.png)
 - ✅ **Semantic Search**: Intelligent tool discovery via AgentCore Gateway
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fb7yc3uy6y46201mbder.png)
 - ✅ **Persistent Memory**: Cross-session conversation continuity
-- ✅ **Production Ready**: Deployable to AgentCore Runtime or local CLI
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/6lrhg7y3h18dyt7h9zcj.png)
+- ✅ **Ready**: Ready local CLI and in progress to be Deployable to AgentCore Runtime
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/o1bghpfjwuec9478eo4g.png)
 - ✅ **OAuth Secured**: Cognito-based authentication
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pvgxy5sta61pt75pmaqi.png)
+
 
 ### Use Cases
 
@@ -47,35 +55,13 @@ AI-powered agent that monitors and optimizes AWS resources through natural langu
 - Search CloudWatch logs for issues
 - Optimize EBS storage usage
 
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/66p6l2uaoa0ndefxajqz.png)
+
 ---
 
 ## Architecture
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Your Application                      │
-│                 (CLI or AgentCore Runtime)               │
-└────────────────────┬────────────────────────────────────┘
-                     │ OAuth Token
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│            AgentCore Gateway (MCP Protocol)             │
-│          ✓ Semantic Search  ✓ Debug Mode               │
-│                 137 Tools Available                      │
-└──────┬──────────────┬──────────────┬────────────────────┘
-       │              │              │
-       ▼              ▼              ▼
- CloudWatch      CloudWatch        EBS
-  Metrics          Logs           API
- (40 tools)     (91 tools)      (6 tools)
-       │              │              │
-       └──────────────┴──────────────┘
-                     │ Via IAM Role
-                     ▼
-         ┌───────────────────────┐
-         │   Your AWS Account    │
-         └───────────────────────┘
-```
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/8xmvuxrdbjhv5w07mtzn.png)
 
 ### Components
 
@@ -551,6 +537,6 @@ For issues:
 
 ---
 
-**Status**: ✅ Production Ready
+**Status**: ✅ Production Not Ready yet (Still facing some issues in runtime, once i solve it i will update the code and the post)
 **Last Updated**: September 30, 2025
 **Total Tools**: 137 across 3 API targets
